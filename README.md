@@ -1,15 +1,38 @@
-## React.js memory game
+# Phonics memory game
 
-Game is built using React.js.
+## Description
 
-- As of now there is one difficulty setting: 10 cards.
-- Counting amount of clicks until you win.
+Game is built using React
+
+- Counts amount of clicks until you win.
 - Can reset the game and play again after won.
-- Basic styling done without any CSS library.
 - Cards flip is made using ReactCardFlip.
 
-The game is a hobby project to practise React as well as algorithms and game logic.
+## Table of Contents
 
-## Demo
+- [Description](#description)
+- [Screenshot](#screenshot)
+- [Installation](#installation)
+- [Authors and Acknowledgment](#authors-and-acknowledgment)
+- [License](#license)
 
-https://ronnehag.github.io/reactjs-memory-game/#/
+## Screenshot
+
+<img src="" alt="alt text" width="600">
+<img src="" alt="alt text" width="600">
+
+## Installation
+
+The application has been deployed [here]()
+
+## Authors and Acknowledgment
+
+### Main Author
+
+[DC Cunningham](https://github.com/DC-Cunningham)
+
+![Author Avatar](https://avatars0.githubusercontent.com/u/47209814?v=4&s=100)
+
+## License
+
+© 2021 The Beautiful Revolution All Rights Reserved.

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import GameBoard from "./components/GameBoard";
 import NewGame from "./components/NewGame";
 import PlayAgain from './components/PlayAgain';
-
+import {stampedeWords} from "./WordLists/StampedeWords"
 class App extends Component {
   static initState = () => {
     return {
@@ -21,41 +21,34 @@ class App extends Component {
     }));
   }
 
+
+  
   generateDeck = () => {
-    let amount = 10;
     let cards = [];
-    for (let i = 1; i < amount + 1; i++) {
+    for (let i = 0; i < stampedeWords.length  ; i++) {
       let id = createId();
-      let id2 = createId();
-      let rand = Math.floor(Math.random() * 300) + 1;
-      const card1 = {
+      const card = {
         id: id,
-        matchesId: id2,
-        url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${rand}.png`,
+        wordType: stampedeWords[i].wordType,
+        word: stampedeWords[i].word,
         flipped: false,
         found: false,
       }
-      const card2 = {
-        id: id2,
-        matchesId: id,
-        url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${rand}.png`,
-        flipped: false,
-        found: false,
-      }
-      cards.push(card1);
-      cards.push(card2);
+      cards.push(card);
     }
     this.shuffleCards(cards);
-    this.setState({
-      cards: cards
-    });
+    this.setState({cards});
   }
 
   shuffleCards = (a) => {
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+    var m = a.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = a[m];
+      a[m] = a[i];
+      a[i] = t;
     }
+  
     return a;
   }
 
@@ -77,7 +70,6 @@ class App extends Component {
       newGame: true
     });
   };
-
   render() {
     const { cards, newGame, won, clicks } = this.state;
     return (

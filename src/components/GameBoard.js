@@ -55,11 +55,13 @@ export class GameBoard extends Component {
     }
   };
 
-  isMatch = () => {
+  isMatch = async () => {
     const { memoryCards } = this.state;
     const flippedCards = memoryCards.filter(card => card.flipped && !card.found);
-    if (flippedCards[0].matchesId === flippedCards[1].id ||
-      flippedCards[1].matchesId === flippedCards[0].id) {
+    if (flippedCards.length !== 2) {
+      return
+    }
+    if (flippedCards[0].wordType === flippedCards[1].wordType) {
       this.setState(prevState => ({
         memoryCards: prevState.memoryCards.map(card => {
           switch (card.id) {
@@ -79,7 +81,7 @@ export class GameBoard extends Component {
         this.setState({
           memoryCards: memoryCards
         });
-      }, 800);
+      }, 2000);
     }
   };
 
@@ -95,14 +97,15 @@ export class GameBoard extends Component {
 
   createBoard = () =>
     this.state.memoryCards.length ? (
-      this.state.memoryCards.map(card => (
+      this.state.memoryCards.map((card, index) => (
         <MemoryCard
           key={card.id}
           flipped={card.flipped}
           found={card.found}
           id={card.id}
-          imgUrl={card.url}
-          flip={this.handleFlip} />
+          flip={this.handleFlip}
+          number={index+1}
+          word={card.word}/>
       ))
     ) : (
         <p>Loading cards...</p>

@@ -9,28 +9,28 @@ export class MemoryCard extends Component {
   };
 
   render() {
-    const { id, imgUrl, flipped, found } = this.props;
+    const { id, flipped, found, number, word } = this.props;
     return (
       <div className="card">
-        <ReactCardFlip isFlipped={flipped} flipDirection="horizontal">
+        <ReactCardFlip isFlipped={flipped} flipDirection="vertical">
           <div id={id}
             className="memoryCard front"
             onClick={this.flipCard}
             style={cardBack}
             key="front"
-          />
+          >
+            <p >{number}</p>
+          </div>
           <div
             className="memoryCard"
             onClick={this.flipCard}
             key="back"
             style={{
-              backgroundImage: `url(${imgUrl})`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat", backgroundPosition: "center",
-              backgroundColor: found ? "green" : "#3700B3",
+              backgroundColor: found ? "#06cc10" : "#FFFFFF",
               cursor : found ? "" : "pointer",
             }}
           >
+            <p>{word}</p>
           </div>
         </ReactCardFlip>
       </div>
@@ -39,7 +39,7 @@ export class MemoryCard extends Component {
 }
 
 const cardBack = {
-  background: "#3700B3",
+  background: "red",
 }
 
 

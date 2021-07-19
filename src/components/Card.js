@@ -20,7 +20,7 @@ export default class Card extends Component {
           onClick={this.handleClick}
         />
         <div
-          style={{ backgroundColor: "blue", width: "150px", height: "150px" }}
+          style={{ backgroundColor: "grey", width: "150px", height: "150px" }}
           key="back"
           onClick={this.handleClick}
         />

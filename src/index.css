@@ -6,71 +6,75 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  background: #1B1B1B;
+  background: #1b1b1b;
 }
-.message{
+.message {
   color: #fff;
 }
-h2{
+h2 {
   padding: 0;
   margin: 0;
 }
-.board-container{
+.board-container {
   width: 60%;
   margin: 50px auto;
-  text-align: left;
+  text-align: center;
 }
-.memoryCard{
-  height: 80px;
-  width: 120px;
-  border: 1.5px solid transparent;
-  transition: all .3s ease-in;
+.memoryCard {
+  height: 120px;
+  width: 200px;
+  font-size: 2rem;
+  color: #000;
+  border: 5px solid grey;
+  border-radius: 20px;
+  transition: all 0.3s ease-in;
 }
-.memoryCard.front:hover{
+.memoryCard.front:hover {
   cursor: pointer;
-  border: 1.5px solid rgb(40,111,251, 0.5);
+  border: 1.5px solid rgb(40, 111, 251, 0.5);
+  transform: scale(1.075);
 }
 .btn {
   padding: 12px 25px;
-  background: #035A96;
-  border: 1px solid #035A96;
+  background: #035a96;
+  border: 1px solid #035a96;
   color: #fff;
-  transition: all .4s ease-in;
+  transition: all 0.4s ease-in;
 }
-.btn:hover{
-  background: rgb(40,111,251, 0.5);
-  border: 1px solid rgb(40,111,251, 0.5);
+.btn:hover {
+  background: rgb(40, 111, 251, 0.5);
+  border: 1px solid rgb(40, 111, 251, 0.5);
   cursor: pointer;
   transform: scale(1.1);
 }
 .flex-container {
   display: flex;
 }
-.cards{
+.cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.card{
+.card {
   flex: 1 0 calc(21% - 1em);
   padding: 6px 0 6px 0;
 }
-.menu{
+.menu {
   margin: 0 auto;
   text-align: center;
 }
 
-@media only screen and(max-width: 768px){
-  .board-container{
+@media only screen and(max-width: 768px) {
+  .board-container {
     width: 100%;
     margin: 50px auto;
   }
-  .flex-container{
+  .flex-container {
     flex-direction: column;
     justify-content: space-between;
     align-items: space-between;
   }
-  .memoryCard{
+  .memoryCard {
     height: 50px;
     width: 80px;
   }
