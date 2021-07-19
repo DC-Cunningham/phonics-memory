@@ -19,7 +19,7 @@ export class MemoryCard extends Component {
             style={cardBack}
             key="front"
           >
-            <p >{number}</p>
+            {number}
           </div>
           <div
             className="memoryCard"
@@ -39,8 +39,7 @@ export class MemoryCard extends Component {
 }
 
 const cardBack = {
-  background: "red",
+  background: "radial-gradient(circle, rgba(241,241,246,0.8757878151260504) 0%, rgba(153,46,217,1) 100%)",
 }
-
 
 export default MemoryCard;

@@ -19,7 +19,7 @@ export class NewGame extends Component {
         <button className="btn btn-play"
           onClick={this.handleClick}
           style={{ visibility: visible ? "visible" : "hidden" }}>
-          Play
+          Start a game
         </button>
       </div >
     );
