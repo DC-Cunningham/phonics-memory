@@ -73,7 +73,7 @@ class App extends Component {
     const { cards, newGame, won, clicks } = this.state;
     return (
       <div>
-        {!won && <Confetti/>}
+        {won && <Confetti/>}
         <div className="board-container">
           {newGame ?
             (<GameBoard cards={cards} won={this.hasWon} click={this.countClicks} />)
