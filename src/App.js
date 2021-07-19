@@ -21,8 +21,6 @@ class App extends Component {
     }));
   }
 
-
-  
   generateDeck = () => {
     let cards = [];
     for (let i = 0; i < stampedeWords.length  ; i++) {
