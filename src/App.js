@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Confetti from 'react-confetti'
 import GameBoard from "./components/GameBoard";
 import NewGame from "./components/NewGame";
 import PlayAgain from './components/PlayAgain';
@@ -72,11 +73,12 @@ class App extends Component {
     const { cards, newGame, won, clicks } = this.state;
     return (
       <div>
+        {!won && <Confetti/>}
         <div className="board-container">
           {newGame ?
             (<GameBoard cards={cards} won={this.hasWon} click={this.countClicks} />)
             : null}
-            {newGame && (<p className="message center">Total flips: {clicks}</p>)}
+            {newGame && (<p className="message center">Try Count: {clicks}</p>)}
         </div>
 
         <div className="menu">
